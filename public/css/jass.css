@@ -420,12 +420,12 @@ button {
 }
 
 a {
-  color: #1b89bc;
+  color: #bc2e1b;;
   text-decoration: none;
 }
 
 a:hover {
-  color: #065b83;
+  color: #460f0f;
   text-decoration: underline;
 }
 
@@ -912,7 +912,7 @@ a:hover {
 }
 
 .text-link {
-  color: #1b89bc !important;
+  color: #bc2e1b !important;
 }
 
 /* BACKGROUND UTILS */

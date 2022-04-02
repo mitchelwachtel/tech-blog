@@ -1,0 +1,18 @@
+<div>
+    <a id="new-blogpost-button" href="/newblogpost">Add a new blog post</a>
+</div>
+{{#each blogpost as |blogpost|}}
+<div class="row mb-4 blogpost">
+  <div class="col-md-5">
+    <h2>
+      <a href="/blogpost/{{blogpost.id}}">{{blogpost.title}}</a>
+    </h2>
+    <p>Written by {{blogpost.user.name}} on {{format_date blogpost.date}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{blogpost.content}}
+    </p>
+  </div>
+</div>
+{{/each}}
