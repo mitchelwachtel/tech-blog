@@ -1,0 +1,20 @@
+[
+    {
+      "user_id": "1",
+      "title": "My feelings",
+      "content": "Today I feel sad. Today I feel sad. Today I feel sad. Today I feel sad. Today I feel sad. Today I feel sad. Today I feel sad. Today I feel sad. Today I feel sad. Today I feel sad. Today I feel sad.",
+      "date": "June 12, 2000 17:00:00"
+    },
+    {
+        "user_id": "2",
+        "title": "My car",
+        "content": "My car is a truck. My car is a truck. My car is a truck. My car is a truck. My car is a truck.",
+        "date": "December 25, 2002 12:00:00"
+    },
+    {
+        "user_id": "3",
+        "title": "My house",
+        "content": "I live in my house. I live in my house. I live in my house. I live in my house. I live in my house. I live in my house. I live in my house. I live in my house. I live in my house. I live in my house. I live in my house.",
+        "date": "September 8, 2008 10:00:00"
+    }
+  ]
