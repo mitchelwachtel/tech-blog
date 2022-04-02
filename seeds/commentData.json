@@ -1,0 +1,21 @@
+[
+    {
+      "user_id": "1",
+      "blogpost_id": "2",
+      "content": "This is a good point",
+      "date": "June 21, 2021 17:00:00"
+    },
+    {
+        "user_id": "2",
+        "blogpost_id": "3",
+        "content": "This is absolute trash",
+        "date": "August 26, 2021 12:00:00"
+    },
+    {
+        "user_id": "3",
+        "blogpost_id": "1",
+        "content": "You have a nice way of articulating your point",
+        "date": "May 1, 1919 10:00:00"
+    }
+  ]
+  
