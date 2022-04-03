@@ -8,6 +8,10 @@ header {
   padding-right: 10px;
 }
 
+.blogpost {
+  margin: 20px;
+}
+
 .no-button {
   background: none;
   border: none;

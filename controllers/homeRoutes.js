@@ -39,9 +39,9 @@ router.get("/blogpost/:id", withAuth, async (req, res) => {
     });
 
     const blogpost = blogpostData.get({plain: true});
-
+    console.log(blogpost);
     res.render("blogpost", {
-      ...blogpost,
+      blogpost,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -59,7 +59,7 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-// TODO: Use withAuth middleware to prevent access to route
+// Using withAuth middleware to prevent access to route
 router.get("/dashboard", withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
