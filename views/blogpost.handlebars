@@ -10,4 +10,22 @@
       {{blogpost.content}}
     </p>
   </div>
+
+</div >
+<div class="comments-section">
+  <div class="declare">
+      <p>Comments:</p>
+  </div>
+{{#each comment as |comment|}}
+<div class="row mb-4 comment">
+  <div class="col-md-5">
+    <p>{{comment.user.name}} on {{format_date comment.date}}</p>
+  </div>
+  <div class="col-md-7 comment-content">
+    <p>
+      {{comment.content}}
+    </p>
+  </div>
+</div>
+{{/each}}
 </div>

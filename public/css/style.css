@@ -8,6 +8,23 @@ header {
   padding-right: 10px;
 }
 
+.declare {
+  margin: 20px;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.comments-section {
+  background-color: #b9b3b3;
+  margin: 20px;
+  padding: 10px;
+}
+
+.comment {
+  background-color: #b9b3b3;
+  margin: 20px;
+}
+
 .blogpost {
   margin: 20px;
 }
