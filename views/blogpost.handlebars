@@ -15,7 +15,12 @@
 <div class="comments-section">
   <div class="declare">
       <p>Comments:</p>
+      <div class="form-group">
+        <button class="btn btn-primary" type="button" href="/comment/{{blogpost.id}}">Leave a comment</button>
+      </div>
+      
   </div>
+  
 {{#each comment as |comment|}}
 <div class="row mb-4 comment">
   <div class="col-md-5">
