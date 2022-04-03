@@ -9,12 +9,12 @@ const blogpostFormHandler = async (event) => {
       // Send a POST request to the API endpoint
       const response = await fetch('/api/blogpost/', {
         method: 'POST',
-        body: JSON.stringify({ title, content //add other necessary items//}),
+        body: JSON.stringify({ title, content }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        // If successful, redirect the browser to the profile page
+        // If successful, redirect the browser to the dashboard page
         document.location.replace('/');
       } else {
         alert(response.statusText);
