@@ -1,7 +1,12 @@
 <div>
-    <h2>Hey {{user.name}}!</h2>
-    <a id="new-blogpost-button" href="/newblogpost">Add a new blog post</a>
-</div>
+    <div class="declare">
+      <h2>Hey {{user.name}}!</h2>
+      <div class="form-group">
+       <a href="/newblogpost"> <button class="btn btn-primary" type="button">Add a new blog post</button></a>
+      </div>
+      
+  </div>
+
 {{#each user.blogposts as |blogpost|}}
 <div class="row mb-4 blogpost">
   <div class="col-md-5">
