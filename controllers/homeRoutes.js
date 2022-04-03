@@ -80,4 +80,12 @@ router.get("/dashboard", withAuth, async (req, res) => {
   }
 });
 
+router.get("/newblogpost", withAuth, (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  
+  res.render("newblogpost", {
+    logged_in: true
+  });
+});
+
 module.exports = router;
