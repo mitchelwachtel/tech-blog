@@ -1,0 +1,49 @@
+<div class="row mb-4 blogpost">
+  <div class="col-md-5">
+    <h2>
+      <a href="/blogpost/{{blogpost.id}}">{{blogpost.title}}</a>
+    </h2>
+    <p>Written by {{blogpost.user.name}} on {{format_date blogpost.date}}</p>
+    <form class="blogpost-form"></form>
+      <button class="btn btn-primary" id="blogpost-edit" data-bid="{{blogpost.id}}" type="button">Edit</button>
+      <button class="btn btn-primary" id="blogpost-delete" data-bid="{{blogpost.id}}" type="button">Delete</button>
+    </form>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{blogpost.content}}
+    </p>
+  </div>
+
+</div >
+<div class="comments-section">
+  <div class="declare">
+      <p>Comments:</p>
+  </div>
+  
+{{#each comment as |comment|}}
+<div class="row mb-4 comment">
+  <div class="col-md-5">
+    <p>{{comment.user.name}} on {{format_date comment.date}}</p>
+  </div>
+  <div class="col-md-7 comment-content">
+    <p>
+      {{comment.content}}
+    </p>
+  </div>
+    <button class="btn btn-primary comment-edit" data-type="comment-edit" data-cid="{{comment.id}}" data-bid="{{blogpost.id}}" type="button">Edit</button>
+    <button class="btn btn-primary comment-delete" data-type="comment-delete" data-cid="{{comment.id}}" data-bid="{{comment.blogpost_id}}" type="button">Delete</button>
+</div>
+{{/each}}
+
+      <form class="comment-form">
+        <div class="form-group">
+          <textarea class="form-input" type="text" id="content" >Leave a comment here</textarea>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" id="comment-submit" type="submit">Post</button>
+        </div>
+      
+
+</div>
+      <script src="/js/blogpersonal.js"></script>

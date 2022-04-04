@@ -102,4 +102,41 @@ router.get("/newblogpost", withAuth, (req, res) => {
   });
 });
 
+router.get("/blogpost/personal/:id", withAuth, async (req, res) => {
+  try {
+    const blogpostData = await Blogpost.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
+
+    const commentData = await Comment.findAll({
+      where: {
+        blogpost_id: req.params.id,
+      },
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
+
+    const blogpost = blogpostData.get({plain: true});
+    const comment = commentData.map((com) => com.get({plain: true}));
+
+    res.render("blogpostpersonal", {
+      blogpost,
+      comment,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 module.exports = router;

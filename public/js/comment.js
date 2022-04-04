@@ -1,12 +1,6 @@
 const commentFormHandler = async (event) => {
   event.preventDefault();
 
-  console.log("hey");
-  console.log("hey");
-  console.log("hey");
-  console.log("hey");
-  console.log("hey");
-  console.log("hey");
   // Collect values from the comment form
   const content = document.querySelector("#content").value.trim();
   const urlArr = window.location.href.split("/");
@@ -22,10 +16,6 @@ const commentFormHandler = async (event) => {
   } else {
     blogpost_id = bIdQmArr[0];
   }
-
-  console.log(bIdQmArr);
-  //   console.log(bIdArr);
-  console.log(blogpost_id);
 
   if (content) {
     // Send a POST request to the API endpoint
@@ -47,3 +37,5 @@ const commentFormHandler = async (event) => {
 document
   .querySelector("#comment-submit")
   .addEventListener("click", commentFormHandler);
+
+  
