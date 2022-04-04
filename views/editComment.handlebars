@@ -1,0 +1,29 @@
+<div class="row mb-4 blogpost">
+  <div class="col-md-5">
+    <h2>
+      <a href="/blogpost/{{comment.blogpost.id}}">{{comment.blogpost.title}}</a>
+    </h2>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{comment.blogpost.content}}
+    </p>
+  </div>
+
+</div >
+<div class="comments-section">
+  <div class="declare">
+      <p>Update your comment from {{comment.date}}</p>
+  </div>
+
+      <form class="comment-form" data-bid="{{blogpost.id}}" data-cid="{{comment.id}}">
+        <div class="form-group">
+          <textarea class="form-input" type="text" id="content" >{{comment.content}}</textarea>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" id="comment-submit" type="submit">Update Comment</button>
+        </div>
+      </form>
+
+</div>
+      <script src="/js/editcomment.js"></script>

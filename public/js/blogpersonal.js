@@ -43,8 +43,6 @@ document
     }
     if (event.target.getAttribute("data-type") == "comment-delete") {
       deleteComment(event);
-    } else if (event.target.getAttribute("data-type") == "comment-edit") {
-      console.log("still need to add editing feature");
     }
   });
 

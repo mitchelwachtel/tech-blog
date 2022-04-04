@@ -152,8 +152,35 @@ router.get("/editblogpost/:id", withAuth, async (req, res) => {
 
     const blogpost = blogpostData.get({plain: true});
 
-    res.render("editblogpost", {
+    res.render("editBlogpost", {
       blogpost,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/editcomment/:id", withAuth, async (req, res) => {
+  try {
+    const commentData = await Comment.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+        {
+          model: Blogpost
+        }
+      ],
+        
+    });
+
+
+    const comment = commentData.get({plain: true});
+
+    res.render("editComment", {
+      comment,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
