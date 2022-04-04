@@ -6,7 +6,7 @@ const commentFormHandler = async (event) => {
   const urlArr = window.location.href.split("/");
   const blogpostIdQuestionMark = urlArr[urlArr.length - 1];
   const bIdQmArr = blogpostIdQuestionMark.split("");
-  if (bIdQmArr[bIdQmArr.length-1] == '?') {
+  if (bIdQmArr[bIdQmArr.length - 1] == "?") {
     bIdQmArr.pop();
   }
 
@@ -24,8 +24,10 @@ const commentFormHandler = async (event) => {
       body: JSON.stringify({content, blogpost_id}),
       headers: {"Content-Type": "application/json"},
     });
-
-    if (response.ok) {
+    console.log(response);
+    if (response.redirected) {
+      document.location.replace(`/login`);
+    } else if (response.ok) {
       // If successful, redirect the browser to the dashboard page
       document.location.replace(`/blogpost/${blogpost_id}`);
     } else {
@@ -37,5 +39,3 @@ const commentFormHandler = async (event) => {
 document
   .querySelector("#comment-submit")
   .addEventListener("click", commentFormHandler);
-
-  
