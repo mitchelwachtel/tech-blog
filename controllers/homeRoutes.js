@@ -53,8 +53,6 @@ router.get("/blogpost/:id", withAuth, async (req, res) => {
     const blogpost = blogpostData.get({plain: true});
     const comment = commentData.map((com) => com.get({plain: true}));
 
-    console.log(comment);
-    console.log(blogpost);
     res.render("blogpost", {
       blogpost,
       comment,

@@ -1,7 +1,7 @@
 const blogpostFormHandler = async (event) => {
     event.preventDefault();
   
-    // Collect values from the login form
+    // Collect values from the blogpost form
     const title = document.querySelector('#title').value.trim();
     const content = document.querySelector('#content').value.trim();
   
@@ -21,6 +21,9 @@ const blogpostFormHandler = async (event) => {
       }
     }
   };
+
+
+  
 
   document
   .querySelector('.blogpost-form')

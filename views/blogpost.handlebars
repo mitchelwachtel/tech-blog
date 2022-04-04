@@ -15,10 +15,6 @@
 <div class="comments-section">
   <div class="declare">
       <p>Comments:</p>
-      <div class="form-group">
-         <a href="/comment/{{blogpost.id}}"><button class="btn btn-primary" type="button" >Leave a comment</button></a> 
-      </div>
-      
   </div>
   
 {{#each comment as |comment|}}
@@ -33,4 +29,15 @@
   </div>
 </div>
 {{/each}}
+
+      <form class="comment-form">
+        <div class="form-group">
+          <textarea class="form-input" type="text" id="content" >Leave a comment here</textarea>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" id="comment-submit" type="submit">Post</button>
+        </div>
+      </form>
+
 </div>
+      <script src="/js/addcomment.js"></script>
