@@ -31,8 +31,10 @@
       {{comment.content}}
     </p>
   </div>
+{{#if (ifEquals comment.user.id comment.blogpost_id) }}
     <a href="/editcomment/{{comment.id}}"><button class="btn btn-primary comment-edit" data-type="comment-edit" data-cid="{{comment.id}}" data-bid="{{blogpost.id}}" type="button">Edit</button></a>
     <button class="btn btn-primary comment-delete" data-type="comment-delete" data-cid="{{comment.id}}" data-bid="{{comment.blogpost_id}}" type="button">Delete</button>
+{{/if}}
 </div>
 {{/each}}
 
@@ -43,7 +45,6 @@
         <div class="form-group">
           <button class="btn btn-primary" id="comment-submit" type="submit">Post</button>
         </div>
-      
 
 </div>
       <script src="/js/blogpersonal.js"></script>

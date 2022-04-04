@@ -45,19 +45,24 @@ router.get("/blogpost/:id", async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ["name", "id"],
+          attributes: ["name"],
         },
       ],
     });
 
+    const current_user = req.session.user_id;
     const blogpost = blogpostData.get({plain: true});
-    const comment = commentData.map((com) => com.get({plain: true}));
+    const commentData2 = commentData.map((com) => com.get({plain: true}));
+    const comment = commentData2.map((com) =>  {
+      com.current_user = current_user;
+      return com;
+    });
 
+    console.log(comment);
     res.render("blogpost", {
       blogpost,
       comment,
       logged_in: req.session.logged_in,
-      user_id: req.session.user_id,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -121,7 +126,7 @@ router.get("/blogpost/personal/:id", withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ["name", "id"],
+          attributes: ["name", 'id'],
         },
       ],
     });
@@ -133,7 +138,6 @@ router.get("/blogpost/personal/:id", withAuth, async (req, res) => {
       blogpost,
       comment,
       logged_in: req.session.logged_in,
-      user_id: req.session.user_id,
     });
   } catch (err) {
     res.status(500).json(err);
