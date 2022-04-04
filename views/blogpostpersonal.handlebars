@@ -4,9 +4,9 @@
       <a href="/blogpost/{{blogpost.id}}">{{blogpost.title}}</a>
     </h2>
     <p>Written by {{blogpost.user.name}} on {{format_date blogpost.date}}</p>
-    <form class="blogpost-form"></form>
-      <button class="btn btn-primary" id="blogpost-edit" data-bid="{{blogpost.id}}" type="button">Edit</button>
-      <button class="btn btn-primary" id="blogpost-delete" data-bid="{{blogpost.id}}" type="button">Delete</button>
+    <form class="blogpost-form">
+      <button class="btn btn-primary" id="blogpost-edit" data-type="blog-edit" data-bid="{{blogpost.id}}" type="button">Edit</button>
+      <button class="btn btn-primary" id="blogpost-delete" data-type="blog-delete" data-bid="{{blogpost.id}}" type="button">Delete</button>
     </form>
   </div>
   <div class="col-md-7">
