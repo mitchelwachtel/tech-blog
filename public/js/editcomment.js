@@ -17,7 +17,7 @@ const editComment = async (event) => {
   
       if (response.ok) {
         // If successful, redirect the browser to the dashboard page
-        document.location.replace(`/blogpost/personal/${bId}`);
+        document.location.replace(`/blogpost/${bId}`);
       } else {
         alert(response.statusText);
       }
