@@ -55,7 +55,5 @@ document.querySelector(".blogpost-form").addEventListener("click", (event) => {
   }
   if (event.target.getAttribute("data-type") == "blog-delete") {
     deleteBlogpost(event);
-  } else if (event.target.getAttribute("data-type") == "blog-edit") {
-    console.log("still need to add editing feature");
-  }
+  } 
 });
