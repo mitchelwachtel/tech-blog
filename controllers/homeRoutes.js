@@ -27,7 +27,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/blogpost/:id", withAuth, async (req, res) => {
+router.get("/blogpost/:id", async (req, res) => {
   try {
     const blogpostData = await Blogpost.findByPk(req.params.id, {
       include: [
@@ -45,7 +45,7 @@ router.get("/blogpost/:id", withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ["name"],
+          attributes: ["name", "id"],
         },
       ],
     });
@@ -57,6 +57,7 @@ router.get("/blogpost/:id", withAuth, async (req, res) => {
       blogpost,
       comment,
       logged_in: req.session.logged_in,
+      user_id: req.session.user_id,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -120,7 +121,7 @@ router.get("/blogpost/personal/:id", withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ["name"],
+          attributes: ["name", "id"],
         },
       ],
     });
@@ -132,6 +133,7 @@ router.get("/blogpost/personal/:id", withAuth, async (req, res) => {
       blogpost,
       comment,
       logged_in: req.session.logged_in,
+      user_id: req.session.user_id,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -148,7 +150,6 @@ router.get("/editblogpost/:id", withAuth, async (req, res) => {
         },
       ],
     });
-
 
     const blogpost = blogpostData.get({plain: true});
 
@@ -170,12 +171,10 @@ router.get("/editcomment/:id", withAuth, async (req, res) => {
           attributes: ["name"],
         },
         {
-          model: Blogpost
-        }
+          model: Blogpost,
+        },
       ],
-        
     });
-
 
     const comment = commentData.get({plain: true});
 
@@ -187,6 +186,5 @@ router.get("/editcomment/:id", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
 
 module.exports = router;
