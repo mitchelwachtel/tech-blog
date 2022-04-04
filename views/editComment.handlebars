@@ -13,10 +13,10 @@
 </div >
 <div class="comments-section">
   <div class="declare">
-      <p>Update your comment from {{comment.date}}</p>
+      <p>Update your comment from {{format_date comment.date}}</p>
   </div>
 
-      <form class="comment-form" data-bid="{{blogpost.id}}" data-cid="{{comment.id}}">
+      <form class="comment-form" data-bid="{{comment.blogpost.id}}" data-cid="{{comment.id}}">
         <div class="form-group">
           <textarea class="form-input" type="text" id="content" >{{comment.content}}</textarea>
         </div>

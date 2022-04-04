@@ -9,7 +9,7 @@ const editComment = async (event) => {
   
     if (content) {
       // Send a POST request to the API endpoint
-      const response = await fetch(`/api/comment/${id}`, {
+      const response = await fetch(`/api/comment/${cId}`, {
         method: "PUT",
         body: JSON.stringify({content}),
         headers: {"Content-Type": "application/json"},
