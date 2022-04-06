@@ -11,6 +11,28 @@
       on
       {{format_date blogpost.date}}
     </p>
+    {{!-- continue --}}
+    {{#if (ifEquals blogpost.user_id blogpost.current_user)}}
+          <a href="/editblogpost/{{blogpost.id}}">
+            <button
+              class="btn btn-primary blogpost-edit"
+              data-type="comment-edit"
+              data-bid="{{blogpost.id}}"
+              type="button"
+            >
+              Edit
+            </button>
+          </a>
+          <button
+            class="btn btn-primary blogpost-delete"
+            data-type="comment-delete"
+            data-bid="{{blogpost.id}}"
+            type="button"
+          >
+            Delete
+          </button>
+          <script src="/js/delBlogpost.js"></script>
+        {{/if}}
   </div>
   <div class="col-md-7">
     <p>

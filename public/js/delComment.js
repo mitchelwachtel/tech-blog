@@ -11,7 +11,7 @@ const deleteComment = async (event) => {
     });
   
     if (response.ok) {
-      document.location.replace(`/blogpost/personal/${bId}`);
+      document.location.replace(`/blogpost/${bId}`);
     } else {
       alert("Failed to delete comment");
     }

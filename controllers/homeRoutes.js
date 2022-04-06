@@ -57,6 +57,7 @@ router.get("/blogpost/:id", async (req, res) => {
       com.current_user = current_user;
       return com;
     });
+    blogpost.current_user = current_user;
 
     console.log(comment);
     res.render("blogpost", {
