@@ -16,12 +16,12 @@ router.get("/", async (req, res) => {
     // Serialize data so the template can read it
     const blogpost = blogpostData.map((blog) => blog.get({plain: true}));
 
-    // Pass serialized data and session flag into template
+    // Pass serialized data into template along with logged_in status
     res.render("homepage", {
       blogpost,
       logged_in: req.session.logged_in,
     });
-    // res.json(blogpost);
+    
   } catch (err) {
     res.status(500).json(err);
   }
@@ -59,6 +59,7 @@ router.get("/blogpost/:id", async (req, res) => {
     });
     blogpost.current_user = current_user;
 
+     // pass blogpost data and comment data through
     console.log(comment);
     res.render("blogpost", {
       blogpost,
@@ -134,7 +135,8 @@ router.get("/blogpost/personal/:id", withAuth, async (req, res) => {
 
     const blogpost = blogpostData.get({plain: true});
     const comment = commentData.map((com) => com.get({plain: true}));
-
+    // render blogpostpersonal which is a page that you can only get to if you are indeed the user who's blogpost is displayed
+    // pass blogpost data and comment data through
     res.render("blogpostpersonal", {
       blogpost,
       comment,

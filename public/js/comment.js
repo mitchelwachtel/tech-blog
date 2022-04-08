@@ -28,7 +28,7 @@ const commentFormHandler = async (event) => {
     if (response.redirected) {
       document.location.replace(`/login`);
     } else if (response.ok) {
-      // If successful, redirect the browser to the dashboard page
+      // If successful, redirect the browser blogpost's page
       document.location.replace(`/blogpost/${blogpost_id}`);
     } else {
       alert(response.statusText);

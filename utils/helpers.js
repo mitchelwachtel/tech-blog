@@ -7,10 +7,8 @@ module.exports = {
     // format large numbers with commas
     return parseInt(amount).toLocaleString();
   },
-
+// ifEquals was used to determine if the current_user if viewing their own blog or their own comment
   ifEquals: (arg1, arg2) => {
-    console.log(arg1);
-    console.log(arg2);
     return arg1 === arg2;
   },
 };

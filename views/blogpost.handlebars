@@ -11,7 +11,7 @@
       on
       {{format_date blogpost.date}}
     </p>
-    {{!-- continue --}}
+    {{!-- ifEquals is determining if the current user is viewing their own blogpost --}}
     {{#if (ifEquals blogpost.user_id blogpost.current_user)}}
           <a href="/editblogpost/{{blogpost.id}}">
             <button
@@ -54,6 +54,7 @@
           on
           {{format_date comment.date}}
         </p>
+        {{!-- ifEquals is determining if the current user is viewing their own comment --}}
          {{#if (ifEquals comment.user_id comment.current_user)}}
           <a href="/editcomment/{{comment.id}}">
             <button
