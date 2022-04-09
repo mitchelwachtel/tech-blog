@@ -13,10 +13,11 @@
     </p>
     {{!-- ifEquals is determining if the current user is viewing their own blogpost --}}
     {{#if (ifEquals blogpost.user_id blogpost.current_user)}}
+    <div class="blogpost-form">
           <a href="/editblogpost/{{blogpost.id}}">
             <button
               class="btn btn-primary blogpost-edit"
-              data-type="comment-edit"
+              data-type="blogpost-edit"
               data-bid="{{blogpost.id}}"
               type="button"
             >
@@ -24,13 +25,14 @@
             </button>
           </a>
           <button
-            class="btn btn-primary blogpost-delete"
-            data-type="comment-delete"
+            class="btn btn-primary blog-delete"
+            data-type="blog-delete"
             data-bid="{{blogpost.id}}"
             type="button"
           >
             Delete
           </button>
+  </div>
           <script src="/js/delBlogpost.js"></script>
         {{/if}}
   </div>
